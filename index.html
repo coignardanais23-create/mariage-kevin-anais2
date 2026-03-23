@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mariage Kévin & Anaïs</title>
+
+<style>
+body {
+margin:0;
+background:white;
+font-family:Georgia, serif;
+overflow:hidden;
+}
+
+#scene {
+width:100vw;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+cursor:pointer;
+position:relative;
+}
+
+/* Rideau blanc /
+#curtain {
+position:absolute;
+width:100%;
+height:100%;
+background:white;
+z-index:3;
+transition:transform 2s ease;
+}
+
+.open #curtain {
+transform:translateY(-100%);
+}
+
+/ Sceau /
+#seal {
+position:absolute;
+width:140px;
+height:140px;
+border-radius:50%;
+background:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:42px;
+color:gold;
+font-weight:bold;
+box-shadow:0 20px 50px rgba(0,0,0,0.3);
+z-index:4;
+transition:all 0.7s ease;
+}
+
+/ Effet cassure /
+.break {
+transform:scale(1.7) rotate(25deg);
+opacity:0;
+}
+
+/ Contenu /
+#content {
+opacity:0;
+text-align:center;
+padding:20px;
+z-index:1;
+}
+
+.open #content {
+opacity:1;
+animation:fadeUp 2s ease;
+}
+
+@keyframes fadeUp {
+from {opacity:0; transform:translateY(40px);}
+to {opacity:1; transform:translateY(0);}
+}
+
+/ Boutons /
+button {
+padding:12px;
+margin:5px;
+background:black;
+color:white;
+border:none;
+border-radius:6px;
+}
+
+/ Texte */
+h1 {
+font-size:28px;
+margin-bottom:10px;
+}
+
+p {
+margin:10px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Musique ambiance style Enya -->
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_946b6d2c43.mp3">
+</audio>
+
+<div id="scene" onclick="openInvite()">
+
+<div id="curtain"></div>
+
+<div id="seal">A & K</div>
+
+<div id="content">
+
+<h1>Bienvenue au mariage de Kévin et Anaïs</h1>
+<p>17 juillet 2027</p>
+
+<p>Serez-vous présent ?</p>
+<button>Oui</button>
+<button>Non</button>
+
+<p>Dormirez-vous sur place ?</p>
+<button>Oui</button>
+<button>Non</button>
+
+<p>Avez-vous des allergies ?</p>
+<button>Oui</button>
+<button>Non</button>
+<br>
+<textarea placeholder="Si oui, précisez..." style="width:80%;height:60px;"></textarea>
+
+<br><br>
+
+<button>Envoyer</button>
+
+<br><br>
+
+<a href="https://music.apple.com/fr/album/tennessee/98416611?i=98415025" target="_blank">
+🎶 Écouter la musique originale
+</a>
+
+</div>
+
+</div>
+
+<script>
+function openInvite(){
+document.getElementById("scene").classList.add("open");
+document.getElementById("seal").classList.add("break");
+document.getElementById("music").play();
+}
+</script>
+
+</body>
+</html>
